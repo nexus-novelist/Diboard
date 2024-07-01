@@ -48,32 +48,37 @@ async def play_sound(
 
 @bot.slash_command(name="boom", description="Plays a vine boom")
 async def boom(interaction: nextcord.Interaction):
+    await interaction.response.defer(ephemeral=True)
     message = await play_sound(interaction, "sounds/boom.mp3")
-    await interaction.response.send_message(message, ephemeral=True)
+    await interaction.followup.send(message, ephemeral=True)
 
 
 @bot.slash_command(name="correct", description="Plays a loud correct buzzer sound")
 async def correct(interaction: nextcord.Interaction):
+    await interaction.response.defer(ephemeral=True)
     message = await play_sound(interaction, "sounds/correct.mp3")
-    await interaction.response.send_message(message, ephemeral=True)
+    await interaction.followup.send(message, ephemeral=True)
 
 
 @bot.slash_command(name="incorrect", description="Plays a loud incorrect buzzer sound")
 async def incorrect(interaction: nextcord.Interaction):
+    await interaction.response.defer(ephemeral=True)
     message = await play_sound(interaction, "sounds/incorrect.mp3")
-    await interaction.response.send_message(message, ephemeral=True)
+    await interaction.followup.send(message, ephemeral=True)
 
 
 @bot.slash_command(name="sigma", description="Plays What The Sigma")
 async def sigma(interaction: nextcord.Interaction):
+    await interaction.response.defer(ephemeral=True)
     message = await play_sound(interaction, "sounds/what_the_sigma.mp3")
-    await interaction.response.send_message(message, ephemeral=True)
+    await interaction.followup.send(message, ephemeral=True)
 
 
 @bot.slash_command(name="disrupt", description="Plays Disrupted Sigma")
 async def disrupt(interaction: nextcord.Interaction):
+    await interaction.response.defer(ephemeral=True)
     message = await play_sound(interaction, "sounds/private/disrupt_sigma.mp3")
-    await interaction.response.send_message(message, ephemeral=True)
+    await interaction.followup.send(message, ephemeral=True)
 
 
 bot.run(TOKEN)
